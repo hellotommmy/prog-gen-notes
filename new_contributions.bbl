@@ -24,14 +24,6 @@ St{\'e}phane Boucheron, G{\'a}bor Lugosi, and Pascal Massart.
   Independence}.
 \newblock Oxford University Press, 2013.
 
-\bibitem{Chao2014}
-Anne Chao, Chun-Huo Chiu, and Lou Jost.
-\newblock Unifying species diversity, phylogenetic diversity, functional
-  diversity, and related similarity and differentiation measures through hill
-  numbers.
-\newblock {\em Annual Review of Ecology, Evolution, and Systematics},
-  45:297--324, 2014.
-
 \bibitem{claessen2000quickcheck}
 Koen Claessen and John Hughes.
 \newblock {QuickCheck}: A lightweight tool for random testing of {Haskell}
@@ -51,11 +43,6 @@ I.~J. Good.
   population parameters.
 \newblock {\em Biometrika}, 40(3--4):237--264, 1953.
 
-\bibitem{Hill1973}
-Mark~O. Hill.
-\newblock Diversity and evenness: A unifying notation and its consequences.
-\newblock {\em Ecology}, 54(2):427--432, 1973.
-
 \bibitem{hill1973diversity}
 Mark~O. Hill.
 \newblock Diversity and evenness: A unifying notation and its consequences.
@@ -73,11 +60,6 @@ Mark~R. Jerrum, Leslie~G. Valiant, and Vijay~V. Vazirani.
 \newblock Random generation of combinatorial structures from a uniform
   distribution.
 \newblock {\em Theoretical Computer Science}, 43:169--188, 1986.
-
-\bibitem{Jost2006}
-Lou Jost.
-\newblock Entropy and diversity.
-\newblock {\em Oikos}, 113(2):363--375, 2006.
 
 \bibitem{lemieux2018fairfuzz}
 Caroline Lemieux and Koushik Sen.

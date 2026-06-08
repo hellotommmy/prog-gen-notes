@@ -83,12 +83,22 @@ mass on each \emph{category of interest}, not on each individual output.
 \end{remark}
 
 \begin{example}[Bug reachability]\label{ex:bug-reach}
-For differential testing of compilers $C_1, C_2$, define the target set
-$S_{\mathrm{bug}} = \{x \in \Lang{G} : C_1(x) \ne C_2(x)\}$.
-Even if no single bug-triggering input has detectable probability,
-$D_G(S_{\mathrm{bug}})$ can be non-negligible because the set aggregates
-many inputs.  The target set is $T$-reachable iff a disagreement can be
-found in $O(T(n))$ samples.
+Consider \emph{differential testing} of two compilers $C_1, C_2$
+(e.g.\ GCC vs.\ Clang).  A program generator~$G$ (e.g.\ Csmith) produces
+random source programs, which are then compiled and executed by both
+compilers.  Here $C_i(x)$ denotes the observable output of compiler~$i$
+on source program~$x$.  Define the target set
+\[
+  S_{\mathrm{bug}} = \{x \in \Lang{G} : C_1(x) \ne C_2(x)\}.
+\]
+Note that $G$ and $C_1, C_2$ play distinct roles: $G$ is the test-input
+generator whose output distribution $D_G$ we analyse, while $C_1, C_2$ are
+the systems under test that \emph{define} what counts as a bug.
+Even if no single bug-triggering input has detectable probability under
+$D_G$, the aggregate $D_G(S_{\mathrm{bug}})$ can be non-negligible because
+$S_{\mathrm{bug}}$ collects many inputs.
+The target set is $T$-reachable iff a disagreement can be found in
+$O(T(n))$ samples from~$G$.
 \end{example}
 
 \begin{example}[Branch coverage targets]\label{ex:branch-reach}
