@@ -1,0 +1,35 @@
+\contentsline {subsection}{\numberline {0.1}Empirical Validation}{3}{subsection.0.1}%
+\contentsline {paragraph}{Setup.}{3}{section*.2}%
+\contentsline {paragraph}{Results.}{3}{section*.3}%
+\contentsline {paragraph}{Observations.}{3}{section*.4}%
+\contentsline {section}{\numberline {1}Background: Property-Based Testing and Generators}{4}{section.1}%
+\contentsline {subsection}{\numberline {1.1}Property-Based Testing vs Unit Testing}{4}{subsection.1.1}%
+\contentsline {subsection}{\numberline {1.2}Generator Combinators}{5}{subsection.1.2}%
+\contentsline {subsection}{\numberline {1.3}SPG: Size-Dependent Polynomial Generators}{5}{subsection.1.3}%
+\contentsline {subsection}{\numberline {1.4}Mapping RustSmith to SPG}{5}{subsection.1.4}%
+\contentsline {subsection}{\numberline {1.5}Key Engineering Challenges}{6}{subsection.1.5}%
+\contentsline {subsection}{\numberline {1.6}Well-Typed Rust in the Complexity Hierarchy}{6}{subsection.1.6}%
+\contentsline {subsection}{\numberline {1.7}Type\nobreakspace {}1 vs Type\nobreakspace {}2 Error Tradeoffs}{6}{subsection.1.7}%
+\contentsline {subsection}{\numberline {1.8}Why Distribution Matters: The Visible-Mass Bridge}{6}{subsection.1.8}%
+\contentsline {section}{\numberline {2}Distribution-Aware Generator Classes}{7}{section.2}%
+\contentsline {subsection}{\numberline {2.1}Visibility-Restricted Generation Classes}{7}{subsection.2.1}%
+\contentsline {subsection}{\numberline {2.2}Practical Complexity Metrics}{7}{subsection.2.2}%
+\contentsline {subsection}{\numberline {2.3}Type\nobreakspace {}1 vs Type\nobreakspace {}2 Error Classes}{7}{subsection.2.3}%
+\contentsline {subsection}{\numberline {2.4}Real-World Generator Taxonomy}{8}{subsection.2.4}%
+\contentsline {section}{\numberline {3}Related Work}{8}{section.3}%
+\contentsline {subsection}{\numberline {3.1}Samplable Distributions and Average-Case Complexity}{8}{subsection.3.1}%
+\contentsline {subsection}{\numberline {3.2}Enumeration Complexity}{8}{subsection.3.2}%
+\contentsline {subsection}{\numberline {3.3}Random Generation and Counting}{8}{subsection.3.3}%
+\contentsline {subsection}{\numberline {3.4}Boltzmann Sampling}{8}{subsection.3.4}%
+\contentsline {subsection}{\numberline {3.5}Coverage-Guided Fuzzing}{9}{subsection.3.5}%
+\contentsline {subsection}{\numberline {3.6}Diversity Measures and Effective Support}{9}{subsection.3.6}%
+\contentsline {section}{\numberline {4}New Results}{9}{section.4}%
+\contentsline {subsection}{\numberline {4.1}Visible-Mass Optimality}{9}{subsection.4.1}%
+\contentsline {subsection}{\numberline {4.2}Separation and Closure Properties of $\mathrm {SPG}_{\mathrm {vis}}^{T,\rho }$}{9}{subsection.4.2}%
+\contentsline {subsection}{\numberline {4.3}Visible Mass and Coverage Time}{11}{subsection.4.3}%
+\contentsline {subsection}{\numberline {4.4}Connection to Enumeration Complexity}{11}{subsection.4.4}%
+\contentsline {section}{\numberline {5}Addressing Reviewer Concerns}{11}{section.5}%
+\contentsline {subsection}{\numberline {5.1}Distribution-Agnoticism (Reviewer\nobreakspace {}A)}{11}{subsection.5.1}%
+\contentsline {subsection}{\numberline {5.2}Output-Based Complexity (Reviewer\nobreakspace {}B)}{11}{subsection.5.2}%
+\contentsline {subsection}{\numberline {5.3}Transducer Connection (Reviewer\nobreakspace {}C)}{12}{subsection.5.3}%
+\contentsline {subsection}{\numberline {5.4}RE $=$ GEN (Reviewer\nobreakspace {}B)}{12}{subsection.5.4}%
