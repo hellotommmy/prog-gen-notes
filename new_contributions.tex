@@ -82,23 +82,52 @@ The target-set framework measures whether the generator places enough
 mass on each \emph{category of interest}, not on each individual output.
 \end{remark}
 
-\begin{example}[Bug reachability]\label{ex:bug-reach}
-Consider \emph{differential testing} of two compilers $C_1, C_2$
-(e.g.\ GCC vs.\ Clang).  A program generator~$G$ (e.g.\ Csmith) produces
-random source programs, which are then compiled and executed by both
-compilers.  Here $C_i(x)$ denotes the observable output of compiler~$i$
-on source program~$x$.  Define the target set
+\begin{example}[Bug reachability via differential testing]\label{ex:bug-reach}
+Let $L$ be a programming language (e.g.\ C) with two compilers
+$C_1, C_2$ (e.g.\ GCC, Clang), where $C_i(x)$ denotes the observable
+output of compiling and executing source program~$x$ under compiler~$i$.
+
+\medskip\noindent\textbf{Constructing the generator.}
+A grammar-based generator~$G$ for differential testing is built from the
+\emph{language specification} of~$L$, not from $C_1$ or $C_2$.
+For instance, Csmith constructs~$G$ by recursively expanding production
+rules of the C grammar while maintaining a type environment to ensure
+well-typedness.  Each random choice during expansion (which production to
+use, which variable to reference, which operator to apply) consumes bits
+from the random tape.
+
+Thus $G$ is ``blind'' to the compilers: it generates programs that are
+valid according to the language grammar and type system, but it has no
+knowledge of which programs trigger compiler disagreements.
+
+\medskip\noindent\textbf{The target set.}
+Define
 \[
   S_{\mathrm{bug}} = \{x \in \Lang{G} : C_1(x) \ne C_2(x)\}.
 \]
-Note that $G$ and $C_1, C_2$ play distinct roles: $G$ is the test-input
-generator whose output distribution $D_G$ we analyse, while $C_1, C_2$ are
-the systems under test that \emph{define} what counts as a bug.
-Even if no single bug-triggering input has detectable probability under
+This set is determined by the interaction between $G$'s output language
+$\Lang{G}$ and the compilers' behaviours---it is generally unknown to the
+tester in advance.
+
+\medskip\noindent\textbf{Reachability.}
+Even if no single bug-triggering program has detectable probability under
 $D_G$, the aggregate $D_G(S_{\mathrm{bug}})$ can be non-negligible because
-$S_{\mathrm{bug}}$ collects many inputs.
-The target set is $T$-reachable iff a disagreement can be found in
-$O(T(n))$ samples from~$G$.
+$S_{\mathrm{bug}}$ collects many programs.
+By Proposition~\ref{prop:observability}, if $D_G(S_{\mathrm{bug}}) \ge
+1/T(n)$, then $m = O(T(n) \log(1/\delta))$ samples from~$G$ suffice to
+produce at least one disagreement with probability $\ge 1 - \delta$.
+Conversely, if $D_G(S_{\mathrm{bug}}) < 1/T(n)$, the expected number of
+samples to hit $S_{\mathrm{bug}}$ exceeds $T(n)$.
+
+\medskip\noindent\textbf{The key question.}
+Since $G$ is constructed independently of $C_1, C_2$, there is no
+guarantee that $S_{\mathrm{bug}}$ is $T$-reachable for polynomial~$T$.
+This is precisely the visible-mass problem: a generator may be
+support-correct ($\Lang{G}$ covers many valid programs) yet place
+negligible mass on bug-triggering inputs.  Coverage-guided fuzzers
+(e.g.\ AFL) attempt to address this by using runtime feedback from the
+compilers to steer the distribution, effectively making $G$ depend
+on~$C$.
 \end{example}
 
 \begin{example}[Branch coverage targets]\label{ex:branch-reach}
